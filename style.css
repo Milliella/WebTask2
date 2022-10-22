@@ -1,0 +1,85 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+    background-color: rgb(205, 237, 237);
+}
+h1{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: oblique;
+    color: lightblue;
+    font-size: 50px;
+}
+p{
+    font-family: monospace;
+    font-size: 25px;
+    color: lightseagreen;
+    font-style: oblique;
+}
+.header{
+    text-align: center;
+    padding: 20px;
+    background-color: crimson;
+    width: 100%;
+    height: 160px;
+    animation-name: test;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    
+}
+@keyframes test {
+    from {background-color: crimson;}
+    to {background-color: rgb(15, 41, 66);}
+   
+}
+/* puts the images on top of each other in columns and in the centre */
+.images{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    object-fit: cover;
+}
+img.rounded-corners{
+    border-radius: 10px;
+    
+}
+/* column details */
+.column{
+    flex: 25%;
+    max-width: 30%;
+    padding: 5px
+}
+/* image styling and layout */
+.column img{
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 10px 10px rgb(27, 70, 90);
+
+}
+/* when you put your cursor over an image it dims slightly */
+.column img:hover{
+    cursor: pointer;
+    filter:brightness(65%);
+
+}
+/* makes the images change to better fit screensize*/
+@media screen and (max-width: 900px) {
+    .column{
+        flex: 100%;
+        max-width: 100%;
+    }  
+}
+@media screen and (max-width: 500px) {
+    .column{
+        flex: 100%;
+        max-width: 100%;
+    }
+    
+}
