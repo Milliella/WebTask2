@@ -34,39 +34,41 @@ p{
    
 }
 /* puts the images on top of each other in columns and in the centre */
-.images{
+.container{
     display: flex;
     flex-wrap: wrap;
-    padding: 5px;
+    padding: 40px;
     align-items: center;
     justify-content: center;
     gap: 10px;
     object-fit: cover;
-}
-img.rounded-corners{
     border-radius: 10px;
-    
+    flex-direction: row-reverse;
 }
+
 /* column details */
 .column{
     flex: 25%;
     max-width: 30%;
     padding: 5px
+    
 }
-/* image styling and layout */
+
+/* image styling and layout- changing how the images look */
 .column img{
     margin-top: 10px;
     width: 100%;
     height: 100%;
     position: relative;
-    cursor: pointer;
     box-shadow: 10px 10px rgb(27, 70, 90);
-
+    border-radius: 15px;
+    
+   
 }
 /* when you put your cursor over an image it dims slightly */
 .column img:hover{
     cursor: pointer;
-    filter:brightness(65%);
+    filter:contrast(65%);
 
 }
 /* makes the images change to better fit screensize*/
@@ -83,3 +85,18 @@ img.rounded-corners{
     }
     
 }
+/* changes text size with screen size */
+@media screen and (max-width: 500px) {
+    h1{
+        font-size: 30px;
+    }
+    p{
+        font-size: 15px;
+    }
+    .header{
+        flex-direction: column;
+    }
+
+}
+    
+
