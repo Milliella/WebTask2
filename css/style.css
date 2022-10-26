@@ -3,11 +3,10 @@
     margin: 0;
 }
 body{
-    background-color: rgb(205, 237, 237);
+    background-color:  rgb(205, 237, 237);
 }
 h1{
     font-family: 'Times New Roman', Times, serif;
-    font-style: oblique;
     color: lightblue;
     font-size: 50px;
 }
@@ -28,13 +27,15 @@ p{
     animation-iteration-count: infinite;
     
 }
+/* animation to make the header box slowly change colour */
 @keyframes test {
-    from {background-color: crimson;}
-    to {background-color: rgb(15, 41, 66);}
+    from {background-color: rgb(61, 40, 130); }
+    to {background-color: rgb(143, 6, 6);}
+   
    
 }
 /* puts the images on top of each other in columns and in the centre */
-.container{
+.Image-gallery{
     display: flex;
     flex-wrap: wrap;
     padding: 40px;
@@ -52,6 +53,7 @@ p{
     max-width: 30%;
     padding: 5px
     
+    
 }
 
 /* image styling and layout- changing how the images look */
@@ -60,15 +62,22 @@ p{
     width: 100%;
     height: 100%;
     position: relative;
-    box-shadow: 10px 10px rgb(27, 70, 90);
-    border-radius: 15px;
+    box-shadow: 10px 10px rgb(14, 37, 48);
+    border-radius: 5px;
+   
     
    
 }
-/* when you put your cursor over an image it dims slightly */
+/* when you put your cursor over an image it brings it to the front and zooms in
+ - z index controls the order of how the images are stacked when intereacted with - 
+ have to tap on images on mobile*/
 .column img:hover{
     cursor: pointer;
-    filter:contrast(65%);
+    transition: 0.5s ease;
+    transform: scale(1.1);
+    z-index: 1;
+    
+    
 
 }
 /* makes the images change to better fit screensize*/
@@ -88,15 +97,17 @@ p{
 /* changes text size with screen size */
 @media screen and (max-width: 500px) {
     h1{
-        font-size: 30px;
+        font-size: 50px;
     }
     p{
-        font-size: 15px;
+        font-size: 25px;
     }
     .header{
         flex-direction: column;
     }
 
 }
+
+
     
 
